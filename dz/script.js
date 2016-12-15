@@ -70,7 +70,7 @@ if (((X==1) && (Y==2)) || ((X==2) && (Y==1))) {
 	result = false;
 }
 alert(result);
-	}
+	};
 
 
 function word(){
@@ -82,7 +82,7 @@ while (i != -1) {
 	i = i - 1; 
 }
 alert(result);
-}
+};
 
 function sumNeo () {
 a = prompt('Введите неотрицательное число:');
@@ -95,7 +95,7 @@ for(i=1; i <= a; i++) {
 	sum = sum + i;
 }
 alert("Сумма чисел от 1 до " + a + " равна " + sum + ".");
-}
+};
 
 function week(){
 var a=prompt('Введите целое число от 1 до 7')
@@ -110,8 +110,8 @@ case 6: alert('Ура! Суббота!'); break;
 case 7: alert('Ура! Воскресенье!'); break;
 break;
 default: alert('Нужно ввести целое число от 1 до 7!\n Вы ввели '+a)
-}
-}
+};
+};
 
 function menu(){
 a = prompt('Введите команду:');
@@ -127,8 +127,8 @@ switch(a) {
     break;
   default:
   alert("Команда не распознана");
-}
-}
+};
+};
 
 function stolbci() {
 	var start = prompt('Введите начальное число', '');
@@ -151,7 +151,7 @@ for (var i = start; i <= finish; i++) {
 	}
 }
 alert(result);
-}
+};
 
 function oboima() {
 n=prompt('Какой размер обоймы?')
@@ -175,9 +175,9 @@ arr.pop();
 
 alert('Выстрел. Осталось '+arr.length+' ');
 continue;
-}
-}
-}
+};
+};
+};
 
 function goroda(){
 var x=prompt('Введите количество городов');
@@ -188,7 +188,7 @@ y=prompt('Введите название города');
 arr.push(y)
 }
 console.log(arr);
-}
+};
 
 function goroda2(){
 cities = [];
@@ -202,7 +202,7 @@ while (true) {
     }
 }
 alert('Вы ввели города: ' + cities);
-}
+};
 
 function resheto(){
 x=prompt('Введите максимальное число')
@@ -271,7 +271,7 @@ function massiv(){
 	console.log(arr);
 	alert('максимальный элемент массива ' + numbMax + text + idMax);
 	alert('минимальный элемент массива ' + numbMin + text + idMin);
-}
+};
 
 
 function () fight{
@@ -279,17 +279,17 @@ var fighter =
 {
 firstname: 'Иван',
 lastname: 'Петров',
-age: 20,
-color: "черный",
+age: 25,
+sex: "мужчина",
 backpack:
 { 'удочка':{weight:5,amount:10},
 'наживка':{weight:6,amount:30},
 'леска':{weight:1,amount:1},
 'грузила':{weight:30,amount:1},
 'крючки':{weight:1,amount:5}
-}
-}
-}
+};
+};
+};
 
 function author() {
 var security = {};
@@ -305,7 +305,7 @@ function authorization() {
     }
 }
 authorization();
-}
+};
 
 function smart(){
 var smart={}
@@ -353,7 +353,7 @@ function rekursia () {
         return a*(rek(r-1))
     }
     alert(rek(a))	
-}
+};
 
 function cifri () {
 		var c = prompt('Введите число');
@@ -368,7 +368,7 @@ function cifri () {
         }   
     };
     alert(rek(c))
-}
+};
 
 function stepen () {
 	var z = parseInt(prompt('Введите заданное число'));
@@ -386,4 +386,4 @@ function stepen () {
        }        
     };
     rek(z, u) 
-}
+};
