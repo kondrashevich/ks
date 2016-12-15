@@ -343,3 +343,47 @@ smart.addapp('Мимишки',120,5)
 smart.start(2);
 smart.mystatus();
 }
+
+function rekursia () {
+	 var r = parseInt(prompt('Введите число'));
+    function rek(r) {
+        if (r == 1) {
+            return 1
+        }
+        return a*(rek(r-1))
+    }
+    alert(rek(a))	
+}
+
+function cifri () {
+		var c = prompt('Введите число');
+    b = '';
+    function rek(c) {
+        if (c < 10) {           
+            b += (Math.floor(c));
+            return b
+        } else {
+            b += (Math.floor(c%10));
+            return rek(c/10)
+        }   
+    };
+    alert(rek(c))
+}
+
+function stepen () {
+	var z = parseInt(prompt('Введите заданное число'));
+    var u = parseInt(prompt('Введите указанное число'));
+    function rek(z, u) {
+        while(z > 1){            
+            if (z == u) {
+                alert('YES')
+            }
+            if (z < u) {
+                return alert('NO');
+                break
+            }
+            return rek(z/u,u)
+       }        
+    };
+    rek(z, u) 
+}
