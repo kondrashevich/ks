@@ -84,7 +84,7 @@ while (i != -1) {
 alert(result);
 };
 
-function sumNeo () {
+function sumNeo() {
 a = prompt('Введите неотрицательное число:');
 while ((isNaN(a)) || (a<0)) {
 	a = prompt('Нужно ввести неотрицательное число!\n Вы ввели '+a);
@@ -190,7 +190,7 @@ arr.push(y)
 console.log(arr);
 };
 
-function goroda2(){
+function gorod(){
 cities = [];
 i = -1;
 while (true) {
@@ -274,7 +274,7 @@ function massiv(){
 };
 
 
-function () fight{
+function fight() {
 var fighter =
 {
 firstname: 'Иван',
@@ -306,6 +306,34 @@ function authorization() {
 }
 authorization();
 };
+
+
+function fightinsea() { 
+    var x = +prompt('Введите первую координату');
+    var y = +prompt('Введите вторую координату');
+    var sea = [[0, 1, 0, 0, 0, 1, 0, 0, 0, 0],
+               [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+               [0, 0, 0, 0, 0, 0, 0, 1, 1, 1],
+               [0, 0, 0, 1, 1, 0, 0, 0, 0, 0],
+               [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+               [1, 1, 0, 0, 1, 1, 1, 1, 0, 0],
+               [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+               [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+               [0, 0, 0, 1, 1, 1, 0, 1, 0, 0],
+               [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],];
+    
+    function seachShip(x,y) {
+        if (x > 9 || y > 9 || x < 0 || y < 0) {
+            return alert('Введите другие координаты')
+        } else if (sea[x][y] == 1) {
+            return alert('Ранил')
+        } else {
+            return alert('Мимо')
+        }
+    } 
+    seachShip(x,y)
+};
+
 
 function smart(){
 var smart={}
