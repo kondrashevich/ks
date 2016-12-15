@@ -1,4 +1,4 @@
-﻿function dz() {
+function dz() {
 alert('первая задача')
 var num1 = +prompt('Введите 1-ое число', '');
 var num2 = +prompt('Введите 2-ое число', '');
@@ -19,46 +19,82 @@ alert( 'Первое число = ' + num1 + ', второе число = ' + nu
 
 function lodka(){
 alert('лодка')
-var S, V, U, T1, T2
-var V=+prompt('Введите скорость лодки: ')
-var U=+prompt('Введите скорость течения реки: ')
-var T1=+prompt('Введите время движения по озеру: ')
-var T2=+prompt('Введите время движения по реке: ')
-var S=T2*(V-U)+T1*V;
+V=+prompt('Введите скорость лодки: ');
+while ((isNaN(V)) || (V<=0)) {
+	V=prompt('Вы ввели недопустимое значение, попробуйте ещё раз:');
+}
+U=+prompt('Введите скорость течения реки: ');
+while ((isNaN(U)) || (u<=0) || (U>=V)) {
+	U=prompt('Вы ввели недопустимое значение, попробуйте ещё раз:');
+}
+T1=prompt('Введите время движения по озеру: ');
+while ((isNaN(T1)) || (T1<=0)) {
+	T1=prompt('Вы ввели недопустимое значение, попробуйте ещё раз:');
+}
+T2=prompt('Введите время движения по реке: ');
+while ((isNaN(T2)) || (T2<=0)) {
+	T2=prompt('Вы ввели недопустимое значение, попробуйте ещё раз:');
+}
+result = V * T1 + (V - U) * T2;
 alert(S +' длина пути лодки');
 };
 
 
 function horse(){
-alert('шахматы')
-var x1, y1, x2, y2
-var x1=+prompt('Введите 1 координату первого поля: ')
-var y1=+prompt('Введите 2 координату первого поля: ')
-var x2=+prompt('Введите 1 координату второго поля: ')
-var y2=+prompt('Введите 2 координату второго поля: ')
-if (Math.abs((x2 - x1) == 2) && Math.abs((y2 - y1) == 1) ||
-    Math.abs((x2 - x1) == 1) && Math.abs((y2 - y1) == 2)) {
-    alert("True");
+	alert('шахматы')
+	x1=prompt('Введите 1 координату первого поля: ');
+while ((parseInt(x1)!=x1) || (x1<1) || (x1>8)) {
+	x1=prompt('Вы ввели недопустимое значение, попробуйте ещё раз:');
 }
-else 
-{
-     alert("False");
+y1=prompt('Введите 2 координату первого поля: ');
+while ((parseInt(y1)!=y1) || (y1<1) || (y1>8)) {
+	y1=prompt('Вы ввели недопустимое значение, попробуйте ещё раз:');
 }
+x2=prompt('Введите 1 координату второго поля: ');
+while ((parseInt(x2)!=x2) || (x2<1) || (x2>8)) {
+	x2=prompt('Вы ввели недопустимое значение, попробуйте ещё раз:');
+}
+y2=prompt('Введите 2 координату второго поля: ');
+while ((parseInt(y2)!=y2) || (y2<1) || (y2>8)) {
+	y2=prompt('Вы ввели недопустимое значение, попробуйте ещё раз:');
+}
+x1=parseInt(x1);
+y1=parseInt(y1);
+x2=parseInt(x2);
+y2=parseInt(y2);
+X=Math.abs(x2-x1);
+Y=Math.abs(y2-y1);
+if (((X==1) && (Y==2)) || ((X==2) && (Y==1))) {
+	result = true;
+} else {
+	result = false;
+}
+alert(result);
 	}
 
 
 function word(){
-var numb = prompt('Введите слово', '');
-	
-var m = numb.length - 1;
-var s = numb.length;
-
-for (var i = m; i >= 0; i--) {
-	numb = numb.concat(numb[i]);
+a = prompt('Введите слово:');
+i = a.length - 1;
+result = "";
+while (i != -1) {
+	result = result + a[i];
+	i = i - 1; 
+}
+alert(result);
 }
 
-numb = numb.slice(s);
-alert(numb);
+function sumNeo () {
+a = prompt('Введите неотрицательное число:');
+while ((isNaN(a)) || (a<0)) {
+	a = prompt('Нужно ввести неотрицательное число!\n Вы ввели '+a);
+}
+sum = 0;
+a = parseInt(a);
+for(i=1; i <= a; i++) {
+	sum = sum + i;
+}
+alert("Сумма чисел от 1 до " + a + " равна " + sum + ".");
 }
 
 function week(){
@@ -74,6 +110,23 @@ case 6: alert('Ура! Суббота!'); break;
 case 7: alert('Ура! Воскресенье!'); break;
 break;
 default: alert('Нужно ввести целое число от 1 до 7!\n Вы ввели '+a)
+}
+}
+
+function menu(){
+a = prompt('Введите команду:');
+switch(a) {
+  case "start":
+    alert("Начало");
+    break;
+  case "options":
+    alert("Опции")
+    break;
+  case "exit":
+    alert("Выход")
+    break;
+  default:
+  alert("Команда не распознана");
 }
 }
 
@@ -137,6 +190,19 @@ arr.push(y)
 console.log(arr);
 }
 
+function goroda2(){
+cities = [];
+i = -1;
+while (true) {
+    i = i + 1;
+    cities[i] = prompt('Введите название города');
+    if (cities[i] == "") {
+        cities.pop();
+        break;
+    }
+}
+alert('Вы ввели города: ' + cities);
+}
 
 function resheto(){
 x=prompt('Введите максимальное число')
@@ -205,6 +271,40 @@ function massiv(){
 	console.log(arr);
 	alert('максимальный элемент массива ' + numbMax + text + idMax);
 	alert('минимальный элемент массива ' + numbMin + text + idMin);
+}
+
+
+function () fight{
+var fighter =
+{
+firstname: 'Иван',
+lastname: 'Петров',
+age: 20,
+color: "черный",
+backpack:
+{ 'удочка':{weight:5,amount:10},
+'наживка':{weight:6,amount:30},
+'леска':{weight:1,amount:1},
+'грузила':{weight:30,amount:1},
+'крючки':{weight:1,amount:5}
+}
+}
+}
+
+function author() {
+var security = {};
+security.login = 'Kris';
+security.password = 'pasword27';
+function authorization() {
+    name = prompt('Введите имя:');
+    pass = prompt('Введите пароль:');
+    if ((name == security.login) && (pass == security.password)) {
+        alert('Привет, ' + name + '!');
+    } else {
+        alert('Вы указали неверный логин или пароль');
+    }
+}
+authorization();
 }
 
 function smart(){
