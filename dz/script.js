@@ -274,22 +274,7 @@ function massiv(){
 };
 
 
-function fight() {
-var fighter =
-{
-firstname: 'Иван',
-lastname: 'Петров',
-age: 25,
-sex: "мужчина",
-backpack:
-{ 'удочка':{weight:5,amount:10},
-'наживка':{weight:6,amount:30},
-'леска':{weight:1,amount:1},
-'грузила':{weight:30,amount:1},
-'крючки':{weight:1,amount:5}
-};
-};
-};
+
 
 function author() {
 var security = {};
@@ -372,15 +357,15 @@ smart.start(2);
 smart.mystatus();
 }
 
-function rekursia () {
-	 var r = parseInt(prompt('Введите число'));
-    function rek(r) {
-        if (r == 1) {
+function rekursia() {
+    var a = +prompt('Введите число');
+    function rec(a) {
+        if (a == 1) {
             return 1
         }
-        return a*(rek(r-1))
+        return a*(rec(a-1))
     }
-    alert(rek(a))	
+    alert(rec(a))
 };
 
 function cifri () {
