@@ -436,7 +436,7 @@ function FIO() {
     var myName = prompt('Введите ФИО')
     var fullName = myName.match(/[а-яa-zё]{1,}/ig)
     if (fullName.length < 2) {
-        console.log('Вы ввели неполное имя')
+        alert('Вы ввели неполное имя')
     } else {
         var lastName = fullName[0][0].toUpperCase() + fullName[0].substring(1).toLocaleLowerCase();
         var name = fullName[1][0].toUpperCase() + fullName[1].substring(1).toLocaleLowerCase();
