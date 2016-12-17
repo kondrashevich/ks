@@ -448,3 +448,51 @@ function FIO() {
        alert('Фамилия: ' + lastName + ',' + ' Имя: ' + name + ',' + ' Отчество: ' + patronymic)
     }   
 }
+
+function choice() {
+    var div = document.getElementsByClassName('select_option')
+		var select = document.createElement('select');
+			select.size = 3;
+			select.multiple = true;
+
+		var item_name = document.createElement('p');
+    var item1 = document.createElement('option');
+    var item2 = document.createElement('option');
+    var item3 = document.createElement('option');
+    var item4 = document.createElement('option');
+    var item5 = document.createElement('option');
+       var tags = [item_name, item1, item2, item3, item4, item5];
+		var color_name = document.createTextNode('Выберите цвет:');
+    var color1 = document.createTextNode('Оранжевый');
+    var color2 = document.createTextNode('Голубой');
+    var color3 = document.createTextNode('Черный');
+    var color4 = document.createTextNode('Красный');
+    var color5 = document.createTextNode('Серый');
+        var colors = [color_name, color1, color2, color3, color4, color5];
+
+    for (var i=0; i<=5; i++) {
+        tags[i].appendChild(colors[i]); 
+    }
+
+    for (var i=1; i<=5; i++) {
+       select.appendChild(tags[i])
+    }
+    div[0].appendChild(item_name)
+    div[0].appendChild(select)
+};
+
+function lighter() {      
+    var html = document.getElementsByTagName('html');  
+    var change= setInterval(function(){ light() }, 500);
+
+    function light() {
+        setTimeout(function() {
+            html[0].style.backgroundColor = 'white'}, 200)
+        html[0].style.backgroundColor = 'green';     
+    }
+    
+    var stop = document.getElementById('stop');
+		stop.onclick = function (){
+        clearInterval(change)
+    } 
+}
