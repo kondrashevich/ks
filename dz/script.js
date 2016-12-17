@@ -400,3 +400,51 @@ function stepen () {
     };
     rek(z, u) 
 };
+
+
+
+function pocta() {
+    var a = prompt('Введите адрес почты');
+    var reg = /^[\w]{1,}(\@(mail.ru|gmail.com))$/ig.test(a);
+    if (reg == false) {
+        console.log('Введите, пожалуйста, другой адрес почты')
+    } else {
+        alert('Спасибо!')
+    }
+}
+
+function telephone() {
+    var a = prompt('Введите телефонный номер');
+    var reg = a.match(/[\d]/g);
+    var number = '';    
+    if (reg.length < 9) {
+        alert('Вы ввели слишком короткий номер.')
+    } else {
+        if (reg[0] == 8 || reg[0] == 7) {
+            reg = reg.slice(2)
+        };
+        reg = reg.join('');
+        number += '+' + 7 + ' (9' + reg.slice(0,2) + ') ' + 
+        reg.slice(2,5) + ' - ' + reg.slice(5,7) + ' - ' +
+        reg.slice(7)
+        alert(number)    
+    }
+}
+
+
+function FIO() {
+    var myName = prompt('Введите ФИО')
+    var fullName = myName.match(/[а-яa-zё]{1,}/ig)
+    if (fullName.length < 2) {
+        console.log('Вы ввели неполное имя')
+    } else {
+        var lastName = fullName[0][0].toUpperCase() + fullName[0].substring(1).toLocaleLowerCase();
+        var name = fullName[1][0].toUpperCase() + fullName[1].substring(1).toLocaleLowerCase();
+        var patronymic = fullName[2] || ' ';
+
+        if (fullName.length == 3) {
+            var patronymic = patronymic[0].toUpperCase() + patronymic.substring(1).toLocaleLowerCase()
+        }
+       alert('Фамилия: ' + lastName + ',' + ' Имя: ' + name + ',' + ' Отчество: ' + patronymic)
+    }   
+}
